@@ -312,20 +312,19 @@ def display_skill_assessment():
 def display_educational_pathways():
     st.subheader("Educational Pathways")
     
-    # Educational pathways
+
     careers_educational_pathways = {
-        "Software Engineer": "Bachelor's degree in Computer Science or Software Engineering",
-        "Data Scientist": "Bachelor's or Master's degree in Computer Science, Data Science, Statistics, or a related field",
-        "Biomedical Researcher": "Bachelor's degree in Biology, Biochemistry, Biotechnology, or a related field",
-        "Civil Engineer": "Bachelor's degree in Civil Engineering or a related field",
-        "UX/UI Designer": "Bachelor's degree in Design, Interaction Design, or a related field",
-        "Environmental Scientist": "Bachelor's degree in Environmental Science, Environmental Engineering, or a related field",
-        "Aerospace Engineer": "Bachelor's degree in Aerospace Engineering or a related field",
-        "Biotechnology Researcher": "Bachelor's or Master's degree in Biotechnology, Biochemistry, or a related field",
-        "Network Security Specialist": "Bachelor's degree in Computer Science, Information Security, or a related field with a focus on network security",
-        "Robotics Engineer": "Bachelor's or Master's degree in Robotics, Mechanical Engineering, or a related field with a focus on robotics and automation"
+        "Software Engineer": "Bachelor's degree in Computer Science, Software Engineering, or Electrical Engineering.",
+        "Data Scientist": "Bachelor's degree in Computer Science, Data Science, Statistics, or a related field. Advanced degrees (Master's or Ph.D.) are often preferred.",
+        "Biomedical Researcher": "Bachelor's degree in Biology, Biochemistry, Biomedical Engineering, or a related field. Advanced degrees are typically required for research positions.",
+        "Civil Engineer": "Bachelor's degree in Civil Engineering or a related field.",
+        "UX/UI Designer": "Bachelor's degree in Graphic Design, User Experience (UX) Design, Interaction Design, or a related field.",
+        "Environmental Scientist": "Bachelor's degree in Environmental Science, Ecology, Environmental Engineering, or a related field.",
+        "Aerospace Engineer": "Bachelor's degree in Aerospace Engineering, Mechanical Engineering, or a related field.",
+        "Biotechnology Researcher": "Bachelor's degree in Biotechnology, Bioengineering, Molecular Biology, or a related field.",
+        "Network Security Specialist": "Bachelor's degree in Computer Science, Cybersecurity, Information Technology, Electrical Engineering, or a related field.",
+        "Robotics Engineer": "Bachelor's degree in Robotics Engineering, Mechanical Engineering, Electrical Engineering, or a related field."
     }
-    
     selected_career = st.selectbox("Select a career:", list(careers_educational_pathways.keys()))
     
     if selected_career:
