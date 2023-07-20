@@ -339,6 +339,7 @@ def display_mentorship_connections():
     st.write("Connect with experienced professionals in your field of interest:")
     st.write("Find mentors who can guide you in your career and provide valuable insights.")
     
+    
     # Fake mentors with diverse representation for different roles
     mentors_by_role = {
         "Software Engineer": [
@@ -434,6 +435,7 @@ def display_mentorship_connections():
         st.write(f"**Mentors for {selected_role}:**")
         for mentor in mentors_by_role[selected_role]:
             st.write(f"- {mentor['name']}, {mentor['title']}")
+            st.write("These are fictitious names.")
 
 
 
@@ -442,7 +444,7 @@ def display_industry_insights():
     st.subheader("Industry Insights and News")
     st.write("Stay up-to-date with the latest trends and advancements in STEM:")
     st.write("Read articles, news, and case studies to gain insights into the industry.")
-    st.write("These are fictitious article names")
+    
     
     # Fake write-ups for trends and advancements in industries related to the roles
     industry_insights = {
@@ -504,6 +506,7 @@ def display_industry_insights():
         st.write(f"**{selected_role}:**")
         for insight in industry_insights[selected_role]:
             st.write(f"- {insight}")
+            st.write("These are fictitious article names.")
 
 
 # Function to display networking and community
@@ -511,7 +514,7 @@ def display_networking_community():
     st.subheader("Networking and Community")
     st.write("Connect with fellow enthusiasts:")
     st.write("Join groups, attend meetups, and collaborate on projects.")
-    st.write("These are fictitious groups")
+    
     
 
     # Formal and empowering meetup groups for various roles
@@ -587,6 +590,7 @@ def display_networking_community():
         st.write(f"**{selected_role}:**")
         for meetup in meetup_groups[selected_role]:
             st.write(f"- {meetup}")
+            st.write("Thes are fictitious groups")
 
 
 
@@ -595,7 +599,7 @@ def display_scholarships_internships():
     st.subheader("Scholarships and Internships")
     st.write("Explore scholarships and internship opportunities in Data Science:")
     st.write("Access information on available programs and application processes.")
-    st.write("These are fictitous programs")
+    
 
     scholarships_internships = {
         "Software Engineer": [
@@ -656,6 +660,7 @@ def display_scholarships_internships():
         st.write(f"**{selected_role}:**")
         for opportunity in scholarships_internships[selected_role]:
             st.write(f"- {opportunity}")
+            st.write("These are fictitious programs.")
 
 
 # Main function
