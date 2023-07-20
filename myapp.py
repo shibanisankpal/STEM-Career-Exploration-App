@@ -1,12 +1,31 @@
 import streamlit as st
+from IPython.display import IFrame
+
 
 # Function to display career profiles
 def display_career_profile():
     st.subheader("Career Profiles")
     
-    careers = ["Software Engineer", "Data Scientist", "Biomedical Researcher", "Civil Engineer"]
-    for career in careers:
-        st.write("- " + career)
+    careers = {
+        "Software Engineer": "Software engineers design, develop, and test software applications. They work on a wide range of projects, from web applications to mobile apps and software systems.",
+        "Data Scientist": "Data scientists analyze and interpret complex data to extract valuable insights. They use statistical techniques and machine learning algorithms to solve real-world problems.",
+        "Biomedical Researcher": "Biomedical researchers conduct scientific studies to explore medical and biological phenomena. They contribute to advancements in healthcare and medical treatments.",
+        "Civil Engineer": "Civil engineers design and oversee the construction of infrastructure projects, such as roads, bridges, buildings, and water systems.",
+        "UX/UI Designer": "UX/UI designers focus on creating user-friendly and visually appealing digital experiences. They collaborate with development teams to enhance user satisfaction and usability.",
+        "Environmental Scientist": "Environmental scientists study the environment and its interactions with human activities. They work to develop solutions for environmental issues and promote sustainable practices.",
+        "Aerospace Engineer": "Aerospace engineers design and develop aircraft, spacecraft, and related systems. They conduct research to improve flight safety and efficiency.",
+        "Biotechnology Researcher": "Biotechnology researchers work on cutting-edge projects to develop new drugs, therapies, and medical technologies. They combine biology and technology to address medical challenges.",
+        "Network Security Specialist": "Network security specialists protect computer networks and systems from cyber threats. They implement security measures to safeguard sensitive data and prevent unauthorized access.",
+        "Robotics Engineer": "Robotics engineers design and build robots for various applications, such as manufacturing, healthcare, and exploration. They focus on creating efficient and safe robotic systems."
+
+    }
+    
+    selected_career = st.selectbox("Select a career:", list(careers.keys()))
+    
+    if selected_career:
+        st.write(f"**{selected_career}**")
+        st.write(careers[selected_career])
+
 
 # Function to display skill assessment
 def display_skill_assessment():
@@ -32,8 +51,11 @@ def display_skill_assessment():
 def display_virtual_job_shadowing():
     st.subheader("Virtual Job Shadowing")
     
-    st.write("Experience a day in the life of a Data Scientist:")
-    st.write("Watch video interviews and demos from Data Scientists as they work on real-world projects.")
+    st.write("Experience a day in the life of a Software Engineer:")
+    st.write("Watch video interviews and demos from Software Engineers as they work on real-world projects.")
+    # Embed YouTube video
+    video_url = "https://www.youtube.com/watch?v=1LSXEC0Clow&list=PL6qIzGkkiXFG-uelSxKpgSz4x3CYLc4DE&index=22"
+    st.write(f'<iframe width="560" height="315" src="{video_url}" frameborder="0" allowfullscreen></iframe>', unsafe_allow_html=True)
 
 # Function to display educational pathways
 def display_educational_pathways():
