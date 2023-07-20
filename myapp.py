@@ -429,9 +429,9 @@ def display_mentorship_connections():
     
     st.write(" ")
     st.write("Select your preferred role to find mentors:")
-    st.write("These are fictitious names.")
     selected_role = st.selectbox("Select a role:", list(mentors_by_role.keys()))
-    
+    st.write("These are fictitious names.")
+
     if selected_role:
         st.write(f"**Mentors for {selected_role}:**")
         for mentor in mentors_by_role[selected_role]:
