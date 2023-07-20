@@ -25,25 +25,7 @@ def display_career_profile():
         st.write(careers[selected_career])
 
 
-# Function to display skill assessment
-def display_skill_assessment():
 
-    # Define the quiz question and correct answer
-    quiz_question = "What programming languages are commonly used in data analysis?"
-    correct_answer = "Python"
-    
-    # Display the quiz question
-    st.write(quiz_question)
-    
-    # Display multiple choice options
-    options = ["Python", "Java", "C++", "Ruby"]
-    selected_option = st.radio("Select an option:", options)
-    
-    # Check the answer
-    if selected_option == correct_answer:
-        st.write("Congratulations! Your answer is correct.")
-    else:
-        st.write("Sorry, your answer is incorrect. The correct answer is:", correct_answer)
 
 # Function to display virtual job shadowing
 def display_virtual_job_shadowing():
@@ -57,6 +39,500 @@ def display_virtual_job_shadowing():
     st.write(f"[Watch the video here]({video_url})")
 
     st.write("Video credit: [Indeed's YouTube Channel](https://www.youtube.com/user/IndeedJobs)")
+import streamlit as st
+
+# Function to display skill assessment for Software Engineer role
+def skill_assessment_software_engineer():
+    st.write("Skill Assessment for Software Engineer")
+    st.write("1. Which programming language is commonly used for web development?")
+    st.write("   a) Python")
+    st.write("   b) JavaScript")
+    st.write("   c) Java")
+    st.write("   d) C++")
+    correct_answer_q1 = "b"
+
+    st.write("2. What is version control used for in software development?")
+    st.write("   a) Managing project timelines")
+    st.write("   b) Tracking changes in code")
+    st.write("   c) Generating test cases")
+    st.write("   d) Designing user interfaces")
+    correct_answer_q2 = "b"
+
+    st.write("3. Which database system is known for its scalability and high availability?")
+    st.write("   a) MySQL")
+    st.write("   b) SQLite")
+    st.write("   c) MongoDB")
+    st.write("   d) PostgreSQL")
+    correct_answer_q3 = "d"
+
+    total_questions = 3
+    user_answers = {
+        "1": st.session_state.get("q1", "").lower(),
+        "2": st.session_state.get("q2", "").lower(),
+        "3": st.session_state.get("q3", "").lower()
+    }
+
+    if st.button("Submit"):
+        # Check the answers
+        score = 0
+
+        if user_answers["1"] == correct_answer_q1:
+            score += 1
+        if user_answers["2"] == correct_answer_q2:
+            score += 1
+        if user_answers["3"] == correct_answer_q3:
+            score += 1
+
+        # Display the score
+        st.write(f"You scored {score} out of {total_questions}.")
+        st.session_state.score = score
+
+# Function to display skill assessment for Data Scientist role
+def skill_assessment_data_scientist():
+    st.write("Skill Assessment for Data Scientist")
+    st.write("1. What is the primary goal of data cleaning in the data science process?")
+    st.write("   a) Reduce the size of the dataset")
+    st.write("   b) Prepare data for visualization")
+    st.write("   c) Ensure data is accurate and consistent")
+    st.write("   d) Combine data from different sources")
+    correct_answer_q1 = "c"
+
+    st.write("2. Which machine learning algorithm is used for classification problems?")
+    st.write("   a) K-Means")
+    st.write("   b) Decision Trees")
+    st.write("   c) Linear Regression")
+    st.write("   d) Principal Component Analysis (PCA)")
+    correct_answer_q2 = "b"
+
+    st.write("3. What is the process of feeding labeled data to a machine learning algorithm for training?")
+    st.write("   a) Feature engineering")
+    st.write("   b) Model validation")
+    st.write("   c) Model evaluation")
+    st.write("   d) Supervised learning")
+    correct_answer_q3 = "d"
+
+    total_questions = 3
+    user_answers = {
+        "1": st.session_state.get("q1", "").lower(),
+        "2": st.session_state.get("q2", "").lower(),
+        "3": st.session_state.get("q3", "").lower()
+    }
+
+    if st.button("Submit"):
+        # Check the answers
+        score = 0
+
+        if user_answers["1"] == correct_answer_q1:
+            score += 1
+        if user_answers["2"] == correct_answer_q2:
+            score += 1
+        if user_answers["3"] == correct_answer_q3:
+            score += 1
+
+        # Display the score
+        st.write(f"You scored {score} out of {total_questions}.")
+        st.session_state.score = score
+
+# Function to display skill assessment for Biomedical Researcher role
+def skill_assessment_biomedical_researcher():
+    st.write("Skill Assessment for Biomedical Researcher")
+    st.write("1. What is a common technique used to study biological molecules?")
+    st.write("   a) Polymerase Chain Reaction (PCR)")
+    st.write("   b) Regression Analysis")
+    st.write("   c) Network Security")
+    st.write("   d) Data Visualization")
+    correct_answer_q1 = "a"
+
+    st.write("2. What is the primary goal of biomedical research?")
+    st.write("   a) Develop new software applications")
+    st.write("   b) Improve healthcare services")
+    st.write("   c) Design civil infrastructure")
+    st.write("   d) Analyze financial data")
+    correct_answer_q2 = "b"
+
+    st.write("3. Which of the following is used to visualize biological structures?")
+    st.write("   a) Statistical Analysis")
+    st.write("   b) 3D Printing")
+    st.write("   c) Artificial Intelligence")
+    st.write("   d) Machine Learning")
+    correct_answer_q3 = "b"
+
+    total_questions = 3
+    user_answers = {
+        "1": st.session_state.get("q1", "").lower(),
+        "2": st.session_state.get("q2", "").lower(),
+        "3": st.session_state.get("q3", "").lower()
+    }
+
+    if st.button("Submit"):
+        # Check the answers
+        score = 0
+
+        if user_answers["1"] == correct_answer_q1:
+            score += 1
+        if user_answers["2"] == correct_answer_q2:
+            score += 1
+        if user_answers["3"] == correct_answer_q3:
+            score += 1
+
+        # Display the score
+        st.write(f"You scored {score} out of {total_questions}.")
+        st.session_state.score = score
+
+
+
+# Function to display skill assessment for Civil Engineer role
+def skill_assessment_civil_engineer():
+    st.write("Skill Assessment for Civil Engineer")
+    st.write("1. What is the primary goal of civil engineering?")
+    st.write("   a) Develop software applications")
+    st.write("   b) Build and maintain infrastructure")
+    st.write("   c) Analyze biological data")
+    st.write("   d) Design user interfaces")
+    correct_answer_q1 = "b"
+
+    st.write("2. Which engineering principle is used to ensure the stability of structures?")
+    st.write("   a) Newton's Laws of Motion")
+    st.write("   b) Ohm's Law")
+    st.write("   c) Hooke's Law")
+    st.write("   d) Bernoulli's Principle")
+    correct_answer_q2 = "c"
+
+    st.write("3. What type of civil engineering project involves designing transportation systems?")
+    st.write("   a) Structural Engineering")
+    st.write("   b) Environmental Engineering")
+    st.write("   c) Geotechnical Engineering")
+    st.write("   d) Transportation Engineering")
+    correct_answer_q3 = "d"
+
+    total_questions = 3
+    user_answers = {
+        "1": st.session_state.get("q1", "").lower(),
+        "2": st.session_state.get("q2", "").lower(),
+        "3": st.session_state.get("q3", "").lower()
+    }
+
+    if st.button("Submit"):
+        # Check the answers
+        score = 0
+
+        if user_answers["1"] == correct_answer_q1:
+            score += 1
+        if user_answers["2"] == correct_answer_q2:
+            score += 1
+        if user_answers["3"] == correct_answer_q3:
+            score += 1
+
+        # Display the score
+        st.write(f"You scored {score} out of {total_questions}.")
+        st.session_state.score = score
+
+# Function to display skill assessment for UX/UI Designer role
+def skill_assessment_ux_ui_designer():
+    st.write("Skill Assessment for UX/UI Designer")
+    st.write("1. What is the main focus of UX/UI design?")
+    st.write("   a) Analyzing financial data")
+    st.write("   b) Developing web applications")
+    st.write("   c) Enhancing user experience")
+    st.write("   d) Designing civil infrastructure")
+    correct_answer_q1 = "c"
+
+    st.write("2. What is the purpose of wireframing in the design process?")
+    st.write("   a) Create 3D models")
+    st.write("   b) Present design ideas")
+    st.write("   c) Generate financial reports")
+    st.write("   d) Test software applications")
+    correct_answer_q2 = "b"
+
+    st.write("3. Which design principle focuses on how elements are arranged on a page?")
+    st.write("   a) Contrast")
+    st.write("   b) Alignment")
+    st.write("   c) Proximity")
+    st.write("   d) Repetition")
+    correct_answer_q3 = "b"
+
+    total_questions = 3
+    user_answers = {
+        "1": st.session_state.get("q1", "").lower(),
+        "2": st.session_state.get("q2", "").lower(),
+        "3": st.session_state.get("q3", "").lower()
+    }
+
+    if st.button("Submit"):
+        # Check the answers
+        score = 0
+
+        if user_answers["1"] == correct_answer_q1:
+            score += 1
+        if user_answers["2"] == correct_answer_q2:
+            score += 1
+        if user_answers["3"] == correct_answer_q3:
+            score += 1
+
+        # Display the score
+        st.write(f"You scored {score} out of {total_questions}.")
+        st.session_state.score = score
+
+# Function to display skill assessment for Environmental Scientist role
+def skill_assessment_environmental_scientist():
+    st.write("Skill Assessment for Environmental Scientist")
+    st.write("1. What is the primary goal of environmental science?")
+    st.write("   a) Design user interfaces")
+    st.write("   b) Analyze financial data")
+    st.write("   c) Develop new software applications")
+    st.write("   d) Study interactions between organisms and their environment")
+    correct_answer_q1 = "d"
+
+    st.write("2. What is the study of past climates based on tree ring analysis?")
+    st.write("   a) Paleontology")
+    st.write("   b) Geology")
+    st.write("   c) Dendrochronology")
+    st.write("   d) Ecology")
+    correct_answer_q2 = "c"
+
+    st.write("3. Which environmental issue involves the excessive buildup of greenhouse gases?")
+    st.write("   a) Deforestation")
+    st.write("   b) Ozone depletion")
+    st.write("   c) Ocean acidification")
+    st.write("   d) Global warming")
+    correct_answer_q3 = "d"
+
+    total_questions = 3
+    user_answers = {
+        "1": st.session_state.get("q1", "").lower(),
+        "2": st.session_state.get("q2", "").lower(),
+        "3": st.session_state.get("q3", "").lower()
+    }
+
+    if st.button("Submit"):
+        # Check the answers
+        score = 0
+
+        if user_answers["1"] == correct_answer_q1:
+            score += 1
+        if user_answers["2"] == correct_answer_q2:
+            score += 1
+        if user_answers["3"] == correct_answer_q3:
+            score += 1
+
+        # Display the score
+        st.write(f"You scored {score} out of {total_questions}.")
+        st.session_state.score = score
+
+# Function to display skill assessment for Aerospace Engineer role
+def skill_assessment_aerospace_engineer():
+    st.write("Skill Assessment for Aerospace Engineer")
+    st.write("1. What is the primary focus of aerospace engineering?")
+    st.write("   a) Study of living organisms")
+    st.write("   b) Design and development of aircraft and spacecraft")
+    st.write("   c) Analysis of financial markets")
+    st.write("   d) Construction of civil infrastructure")
+    correct_answer_q1 = "b"
+
+    st.write("2. Which aerospace engineering field involves the study of flight principles?")
+    st.write("   a) Aerodynamics")
+    st.write("   b) Geotechnical Engineering")
+    st.write("   c) Environmental Engineering")
+    st.write("   d) Structural Engineering")
+    correct_answer_q2 = "a"
+
+    st.write("3. What is the purpose of wind tunnel testing in aerospace engineering?")
+    st.write("   a) Generate financial reports")
+    st.write("   b) Test rockets in space")
+    st.write("   c) Analyze the aerodynamic performance of models")
+    st.write("   d) Create 3D models of aircraft")
+    correct_answer_q3 = "c"
+
+    total_questions = 3
+    user_answers = {
+        "1": st.session_state.get("q1", "").lower(),
+        "2": st.session_state.get("q2", "").lower(),
+        "3": st.session_state.get("q3", "").lower()
+    }
+
+    if st.button("Submit"):
+        # Check the answers
+        score = 0
+
+        if user_answers["1"] == correct_answer_q1:
+            score += 1
+        if user_answers["2"] == correct_answer_q2:
+            score += 1
+        if user_answers["3"] == correct_answer_q3:
+            score += 1
+
+        # Display the score
+        st.write(f"You scored {score} out of {total_questions}.")
+        st.session_state.score = score
+
+# Function to display skill assessment for Biotechnology Researcher role
+def skill_assessment_biotechnology_researcher():
+    st.write("Skill Assessment for Biotechnology Researcher")
+    st.write("1. What is the primary goal of biotechnology research?")
+    st.write("   a) Study of civil infrastructure")
+    st.write("   b) Development of financial models")
+    st.write("   c) Improvement of medical treatments")
+    st.write("   d) Design of user interfaces")
+    correct_answer_q1 = "c"
+
+    st.write("2. Which technique is used to amplify DNA in biotechnology experiments?")
+    st.write("   a) Polymerase Chain Reaction (PCR)")
+    st.write("   b) Principal Component Analysis (PCA)")
+    st.write("   c) Newton's Laws of Motion")
+    st.write("   d) Regression Analysis")
+    correct_answer_q2 = "a"
+
+    st.write("3. What is the purpose of gene editing in biotechnology?")
+    st.write("   a) Analyze financial data")
+    st.write("   b) Improve healthcare services")
+    st.write("   c) Design web applications")
+    st.write("   d) Modify the genetic code of organisms")
+    correct_answer_q3 = "d"
+
+    total_questions = 3
+    user_answers = {
+        "1": st.session_state.get("q1", "").lower(),
+        "2": st.session_state.get("q2", "").lower(),
+        "3": st.session_state.get("q3", "").lower()
+    }
+
+    if st.button("Submit"):
+        # Check the answers
+        score = 0
+
+        if user_answers["1"] == correct_answer_q1:
+            score += 1
+        if user_answers["2"] == correct_answer_q2:
+            score += 1
+        if user_answers["3"] == correct_answer_q3:
+            score += 1
+
+        # Display the score
+        st.write(f"You scored {score} out of {total_questions}.")
+        st.session_state.score = score
+
+# Function to display skill assessment for Network Security Specialist role
+def skill_assessment_network_security_specialist():
+    st.write("Skill Assessment for Network Security Specialist")
+    st.write("1. What is the primary focus of network security?")
+    st.write("   a) Design of civil infrastructure")
+    st.write("   b) Analysis of financial data")
+    st.write("   c) Protection of computer networks and systems")
+    st.write("   d) Development of web applications")
+    correct_answer_q1 = "c"
+
+    st.write("2. Which type of attack involves capturing and analyzing network traffic?")
+    st.write("   a) Brute force attack")
+    st.write("   b) Phishing attack")
+    st.write("   c) Denial-of-Service (DoS) attack")
+    st.write("   d) Packet sniffing attack")
+    correct_answer_q2 = "d"
+
+    st.write("3. What security measure involves verifying the identity of a user?")
+    st.write("   a) Intrusion Detection System (IDS)")
+    st.write("   b) Encryption")
+    st.write("   c) Multi-factor authentication")
+    st.write("   d) Firewall")
+    correct_answer_q3 = "c"
+
+    total_questions = 3
+    user_answers = {
+        "1": st.session_state.get("q1", "").lower(),
+        "2": st.session_state.get("q2", "").lower(),
+        "3": st.session_state.get("q3", "").lower()
+    }
+
+    if st.button("Submit"):
+        # Check the answers
+        score = 0
+
+        if user_answers["1"] == correct_answer_q1:
+            score += 1
+        if user_answers["2"] == correct_answer_q2:
+            score += 1
+        if user_answers["3"] == correct_answer_q3:
+            score += 1
+
+        # Display the score
+        st.write(f"You scored {score} out of {total_questions}.")
+        st.session_state.score = score
+
+# Function to display skill assessment for Robotics Engineer role
+def skill_assessment_robotics_engineer():
+    st.write("Skill Assessment for Robotics Engineer")
+    st.write("1. What is the primary focus of robotics engineering?")
+    st.write("   a) Analyze financial data")
+    st.write("   b) Design and development of robots")
+    st.write("   c) Study of living organisms")
+    st.write("   d) Create 3D models")
+    correct_answer_q1 = "b"
+
+    st.write("2. Which field of robotics involves programming robots to perform tasks?")
+    st.write("   a) Mechatronics")
+    st.write("   b) Computer Vision")
+    st.write("   c) Artificial Intelligence")
+    st.write("   d) Controls and Kinematics")
+    correct_answer_q2 = "c"
+
+    st.write("3. What is the purpose of sensors in robotics?")
+    st.write("   a) Analyze the aerodynamic performance of models")
+    st.write("   b) Generate financial reports")
+    st.write("   c) Capture and process environmental data")
+    st.write("   d) Test rockets in space")
+    correct_answer_q3 = "c"
+
+    total_questions = 3
+    user_answers = {
+        "1": st.session_state.get("q1", "").lower(),
+        "2": st.session_state.get("q2", "").lower(),
+        "3": st.session_state.get("q3", "").lower()
+    }
+
+    if st.button("Submit"):
+        # Check the answers
+        score = 0
+
+        if user_answers["1"] == correct_answer_q1:
+            score += 1
+        if user_answers["2"] == correct_answer_q2:
+            score += 1
+        if user_answers["3"] == correct_answer_q3:
+            score += 1
+
+        # Display the score
+        st.write(f"You scored {score} out of {total_questions}.")
+        st.session_state.score = score
+
+
+
+
+def display_skill_assessment():
+    # Set page title and layout
+    st.set_page_config(page_title="STEM Career Exploration App", layout="wide")
+    
+    # Display app title and description
+    st.title("STEM Career Exploration App")
+    st.write("Explore various STEM career options and resources.")
+    
+    # Create a sidebar menu for app navigation
+    menu_options = {
+        "Career Profiles": display_career_profile,
+        "Skill Assessment - Software Engineer": skill_assessment_software_engineer,
+        "Skill Assessment - Data Scientist": skill_assessment_data_scientist,
+        "Skill Assessment - Biomedical Researcher": skill_assessment_biomedical_researcher,
+        "Skill Assessment - Civil Engineer": skill_assessment_civil_engineer,
+        "Skill Assessment - UX/UI Designer": skill_assessment_ux_ui_designer,
+        "Skill Assessment - Environmental Scientist": skill_assessment_environmental_scientist,
+        "Skill Assessment - Aerospace Engineer": skill_assessment_aerospace_engineer,
+        "Skill Assessment - Biotechnology Researcher": skill_assessment_biotechnology_researcher,
+        "Skill Assessment - Network Security Specialist": skill_assessment_network_security_specialist,
+        "Skill Assessment - Robotics Engineer": skill_assessment_robotics_engineer
+    }
+    menu_selection = st.sidebar.radio("Menu", list(menu_options.keys()))
+    
+    # Based on the menu selection, call the corresponding function
+    menu_options[menu_selection]()
+
 
 
 # Function to display educational pathways
