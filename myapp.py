@@ -83,7 +83,7 @@ def display_educational_pathways():
         st.write(f"**{selected_career}**")
         st.write(careers_educational_pathways[selected_career])
 
-        
+
 # Function to display mentorship connections
 def display_mentorship_connections():
     st.subheader("Mentorship Connections")
@@ -101,8 +101,106 @@ def display_industry_insights():
 # Function to display networking and community
 def display_networking_community():
     st.subheader("Networking and Community")
-    st.write("Connect with fellow Data Science enthusiasts:")
+    st.write("Connect with fellow enthusiasts:")
     st.write("Join discussion forums, attend meetups, and collaborate on projects.")
+    
+    # Formal and empowering discussion forum names for Data Science
+    data_science_forums = [
+        "WomenInData Professionals Forum",
+        "DataScience Empowerment Community",
+        "SheAnalytics Network",
+        "STEMQueens Forum",
+        "DataWizards Collective"
+    ]
+    
+    st.write("**Discussion Forums for Data Science:**")
+    for forum in data_science_forums:
+        st.write(f"- {forum}")
+
+    # Formal and empowering meetup groups for various roles
+    meetup_groups = {
+        "Software Engineer": [
+            "CodeQueens Meetup",
+            "TechLadies Network",
+            "DevDivas Collective",
+            "CodeCrafters Community"
+        ],
+        "Data Scientist": [
+            "DataDivas Meetup",
+            "AnalyticsQueens Group",
+            "MLWonderWomen Network",
+            "DataMavens Community"
+        ],
+        "Biomedical Researcher": [
+            "BioTechLadies Meetup",
+            "MedicalWonders Network",
+            "BioInnovators Collective",
+            "ResearchRocks Community"
+        ],
+        "Civil Engineer": [
+            "CivilQueens Meetup",
+            "BuildHerBetter Group",
+            "StructuraDivas Network",
+            "CivilSuperwomen Community"
+        ],
+        "UX/UI Designer": [
+            "UXSheDesigners Meetup",
+            "VisualMavens Network",
+            "DesignWonders Collective",
+            "UXUIQueens Community"
+        ],
+        "Environmental Scientist": [
+            "EcoLadies Meetup",
+            "SustainableSTEM Network",
+            "GreenInnovators Collective",
+            "EcoWarriorWomen Community"
+        ],
+        "Aerospace Engineer": [
+            "AeroWonders Meetup",
+            "SkyHighSTEM Group",
+            "SpaceExplorers Network",
+            "AeroAmazons Community"
+        ],
+        "Biotechnology Researcher": [
+            "BioTechQueens Meetup",
+            "BioGenius Network",
+            "BioInnovators Collective",
+            "BioTechAmazons Community"
+        ],
+        "Network Security Specialist": [
+            "SecureSheNetworks Meetup",
+            "CyberGuardians Group",
+            "SecurityWonders Network",
+            "SecureSTEMQueens Community"
+        ],
+        "Robotics Engineer": [
+            "RobotTechLadies Meetup",
+            "RoboWonderWomen Group",
+            "AIandBots Network",
+            "RobotSTEMQueens Community"
+        ]
+    }
+    
+    st.write(" ")
+    st.write("**Meetup Groups for Various STEM Roles:**")
+    for role, meetups in meetup_groups.items():
+        st.write(f"**{role}:**")
+        for meetup in meetups:
+            st.write(f"- {meetup}")
+
+    # Formal and empowering mentors for Data Science
+    data_science_mentors = [
+        {"name": "Dr. Alicia Roberts", "title": "Senior Data Scientist at Analytico Inc."},
+        {"name": "Jenny Zhang", "title": "Machine Learning Engineer at AI Innovations"},
+        {"name": "Rachel Chen", "title": "Data Science Manager at DataTech Solutions"},
+        {"name": "Alex Turner", "title": "Data Analyst at DataMinds Co."},
+        {"name": "Dr. Emily Lee", "title": "Data Scientist at InsightsLab"}
+    ]
+    
+    st.write(" ")
+    st.write("**Mentors for Data Science:**")
+    for mentor in data_science_mentors:
+        st.write(f"- {mentor['name']}, {mentor['title']}")
 
 # Function to display scholarships and internship opportunities
 def display_scholarships_internships():
