@@ -438,53 +438,73 @@ def display_mentorship_connections():
 
 #
 # Function to display industry insights and news
+# Function to display industry insights and news
 def display_industry_insights():
     st.subheader("Industry Insights and News")
-    
-    st.write("Stay up-to-date with the latest trends and advancements in STEM:")
+    st.write("Stay up-to-date with the latest trends and advancements in Data Science:")
     st.write("Read articles, news, and case studies to gain insights into the industry.")
+    
+    # Fake write-ups for trends and advancements in industries related to the roles
+    industry_insights = {
+        "Software Engineer": [
+            "Explore the Latest Web Development Trends in 2023",
+            "How DevOps is Revolutionizing Software Engineering",
+            "Case Study: Building Scalable Software Systems"
+        ],
+        "Data Scientist": [
+            "Artificial Intelligence in Healthcare: The Future of Medicine",
+            "Big Data Analytics: Extracting Insights from Massive Data",
+            "Data Science in Finance: Predictive Analytics for Investment"
+        ],
+        "Biomedical Researcher": [
+            "Advancements in Gene Editing: CRISPR Technology",
+            "Stem Cell Research: Potential Applications in Regenerative Medicine",
+            "Case Study: Exploring the Human Microbiome"
+        ],
+        "Civil Engineer": [
+            "Sustainable Infrastructure: The Key to Smart Cities",
+            "Innovations in Bridge Engineering for Safer Crossings",
+            "Revolutionizing Construction with 3D Printing Technology"
+        ],
+        "UX/UI Designer": [
+            "User-Centric Design: Enhancing User Experience",
+            "The Role of AR and VR in UX/UI Design",
+            "Case Study: Redesigning a Mobile App for Accessibility"
+        ],
+        "Environmental Scientist": [
+            "Renewable Energy Trends: Shaping a Greener Future",
+            "Climate Change Mitigation Strategies: From Policy to Action",
+            "Protecting Biodiversity: Conservation Efforts and Challenges"
+        ],
+        "Aerospace Engineer": [
+            "Advancements in Space Exploration: Mars Colonization",
+            "Future of Aeronautics: Electric and Hybrid Aircraft",
+            "Case Study: Designing the Next-Gen Spacecraft"
+        ],
+        "Biotechnology Researcher": [
+            "Biopharmaceuticals: Innovations in Drug Development",
+            "Bioinformatics and Genomics: Analyzing Biological Data",
+            "Case Study: Engineering Microorganisms for Bioproduction"
+        ],
+        "Network Security Specialist": [
+            "Cybersecurity Threat Landscape: Emerging Risks",
+            "Zero Trust Architecture: Securing Modern Networks",
+            "Case Study: Incident Response and Data Breach Management"
+        ],
+        "Robotics Engineer": [
+            "Autonomous Robotics: Advancements in AI-driven Systems",
+            "Human-Robot Interaction: Enabling Seamless Collaboration",
+            "Case Study: Robotics in Industry 4.0 - Transforming Manufacturing"
+        ]
+    }
 
-    # Industry insights and advancements for Software Engineer role
-    if st.session_state.selected_role == "Software Engineer":
-        st.write("## Software Engineer Trends and Advancements")
-        st.write("1. AI-Driven Development: Artificial Intelligence (AI) is transforming software development processes. AI-driven tools automate coding, testing, and debugging tasks, leading to faster and more efficient software development.")
-        st.write("2. Low-Code Platforms: Low-code development platforms are gaining popularity among software engineers. These platforms enable developers to build applications with minimal hand-coding, reducing development time and accelerating project delivery.")
-        st.write("3. Blockchain Integration: Blockchain technology is being integrated into software systems to enhance security and transparency. Decentralized applications (DApps) are becoming more prevalent, opening new possibilities for software engineers.")
+    selected_role = st.selectbox("Select a role:", list(industry_insights.keys()))
 
-    # Industry insights and advancements for Data Scientist role
-    elif st.session_state.selected_role == "Data Scientist":
-        st.write("## Data Scientist Trends and Advancements")
-        st.write("1. Automated Machine Learning (AutoML): Data scientists are leveraging AutoML tools to automate model selection, hyperparameter tuning, and feature engineering. This accelerates the model development process and democratizes machine learning.")
-        st.write("2. Big Data Analytics: With the exponential growth of data, data scientists are adopting advanced big data analytics techniques. Distributed computing frameworks like Apache Hadoop and Spark enable processing and analyzing vast datasets.")
-        st.write("3. Explainable AI (XAI): As AI models become more complex, understanding their decision-making process becomes crucial. XAI techniques aim to provide transparent and interpretable AI models, gaining trust and compliance in critical applications.")
+    if selected_role:
+        st.write(f"**{selected_role}:**")
+        for insight in industry_insights[selected_role]:
+            st.write(f"- {insight}")
 
-    # Industry insights and advancements for Biomedical Researcher role
-    elif st.session_state.selected_role == "Biomedical Researcher":
-        st.write("## Biomedical Researcher Trends and Advancements")
-        st.write("1. Precision Medicine: Biomedical researchers are increasingly focused on precision medicine, tailoring treatments to individual patients based on their genetic makeup, lifestyle, and environmental factors.")
-        st.write("2. Gene Editing Technologies: Advancements in gene editing, such as CRISPR-Cas9, are revolutionizing biomedical research. Researchers can now modify DNA with high precision, offering potential cures for genetic diseases.")
-        st.write("3. Organ-on-a-Chip Technology: Organ-on-a-chip devices are mimicking human organ functions, providing more accurate and ethical models for drug testing and disease research, reducing the need for animal testing.")
-
-    # Industry insights and advancements for Civil Engineer role
-    elif st.session_state.selected_role == "Civil Engineer":
-        st.write("## Civil Engineer Trends and Advancements")
-        st.write("1. Green Infrastructure: Civil engineers are leading the way in sustainable infrastructure development. Green infrastructure, such as green roofs and permeable pavements, helps manage stormwater and promotes environmental conservation.")
-        st.write("2. Building Information Modeling (BIM): BIM technology is transforming the construction industry. Civil engineers use BIM to create digital representations of buildings and infrastructure, enhancing collaboration and project management.")
-        st.write("3. 3D Printing in Construction: Additive manufacturing, or 3D printing, is being explored in construction to create complex and customized structures. This technology has the potential to revolutionize the construction process and reduce material waste.")
-
-
-
-# Function to display the dropdown menu to select the role
-def select_role():
-    roles = ["Software Engineer", "Data Scientist", "Biomedical Researcher", "Civil Engineer"]
-    selected_role = st.selectbox("Select a Role", roles, index=0)
-    st.session_state.selected_role = selected_role
-
-# Call the function to select the role
-select_role()
-
-# Call the function to display industry insights and news based on the selected role
-display_industry_insights()
 
 # Function to display networking and community
 def display_networking_community():
