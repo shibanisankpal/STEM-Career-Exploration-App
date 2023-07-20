@@ -87,9 +87,92 @@ def display_educational_pathways():
 # Function to display mentorship connections
 def display_mentorship_connections():
     st.subheader("Mentorship Connections")
-    
-    st.write("Connect with experienced professionals in the field of Data Science:")
+    st.write("Connect with experienced professionals in your field of interest:")
     st.write("Find mentors who can guide you in your career and provide valuable insights.")
+    
+    # Fake mentors with diverse representation for different roles
+    mentors_by_role = {
+        "Software Engineer": [
+            {"name": "Emily Johnson", "title": "Senior Software Engineer at TechGenius", "race": "Asian"},
+            {"name": "Alex Williams", "title": "Lead Software Developer at InnovateTech", "race": "White"},
+            {"name": "Jennifer Lee", "title": "Full Stack Engineer at CodeCrafters", "race": "Asian"},
+            {"name": "Michael Chen", "title": "Software Architect at DataTech Solutions", "race": "Asian"},
+            {"name": "Sarah Taylor", "title": "Software Engineer at Innovators Corp", "race": "Black"}
+        ],
+        "Data Scientist": [
+            {"name": "Dr. Sarah Thompson", "title": "Data Science Manager at InsightAnalytics", "race": "White"},
+            {"name": "Rachel Liu", "title": "Machine Learning Engineer at AI Innovations", "race": "Asian"},
+            {"name": "Jessica Adams", "title": "Data Analyst at DataMinds Co.", "race": "Black"},
+            {"name": "Daniel Wilson", "title": "Senior Data Scientist at TechData Labs", "race": "White"},
+            {"name": "Maria Sanchez", "title": "Data Scientist at TechnoAnalytica", "race": "Hispanic"}
+        ],
+        "Biomedical Researcher": [
+            {"name": "Dr. Emily Roberts", "title": "Research Scientist at BioTechResearch", "race": "White"},
+            {"name": "Sophia Zhang", "title": "Biotechnology Consultant at BiotechSolutions", "race": "Asian"},
+            {"name": "Robert Johnson", "title": "Medical Researcher at HealthDiscoveries", "race": "Black"},
+            {"name": "Olivia Lee", "title": "Biomedical Engineer at BiomedTech Innovations", "race": "Asian"},
+            {"name": "Linda Patel", "title": "Biomedical Research Associate at HealthGenetics", "race": "Indian"}
+        ],
+        "Civil Engineer": [
+            {"name": "David Chen", "title": "Senior Civil Engineer at BuildItRight Construction", "race": "Asian"},
+            {"name": "Jennifer Wang", "title": "Structural Engineer at ConstructTech", "race": "Asian"},
+            {"name": "Andrew Smith", "title": "Transportation Engineer at UrbanInfra", "race": "White"},
+            {"name": "Ella Brown", "title": "Environmental Engineer at GreenBuild Solutions", "race": "Black"},
+            {"name": "Maria Rodriguez", "title": "Civil Engineer at CivilTech Group", "race": "Hispanic"}
+        ],
+        "UX/UI Designer": [
+            {"name": "Sophie Johnson", "title": "Senior UX Designer at DigitalDesign Studio", "race": "White"},
+            {"name": "Emma Roberts", "title": "Product Designer at UserExperience Labs", "race": "White"},
+            {"name": "Grace Chen", "title": "UI/UX Architect at WebCrafters", "race": "Asian"},
+            {"name": "Julia Lee", "title": "Interaction Designer at UXInnovations", "race": "Asian"},
+            {"name": "Linda Patel", "title": "UX Designer at DesignSolutions", "race": "Indian"}
+        ],
+        "Environmental Scientist": [
+            {"name": "Dr. Samantha Adams", "title": "Environmental Researcher at EarthScience Institute", "race": "White"},
+            {"name": "Lucas Wilson", "title": "Sustainability Consultant at GreenTech Solutions", "race": "White"},
+            {"name": "Sophia Brown", "title": "Conservation Scientist at NatureAware", "race": "Black"},
+            {"name": "Oliver Zhang", "title": "Environmental Engineer at EcoTech Innovations", "race": "Asian"},
+            {"name": "Maria Lopez", "title": "Environmental Analyst at EcoSolutions", "race": "Hispanic"}
+        ],
+        "Aerospace Engineer": [
+            {"name": "Dr. Christopher Johnson", "title": "Aerospace Engineering Manager at AeroTech Innovations", "race": "White"},
+            {"name": "Sarah Lee", "title": "Aircraft Systems Engineer at SkyWings Aerospace", "race": "Asian"},
+            {"name": "Kevin Chen", "title": "Spacecraft Designer at SpaceTech Solutions", "race": "Asian"},
+            {"name": "Isabella Smith", "title": "Aerospace Testing Engineer at AeroLabs", "race": "White"},
+            {"name": "Juan Martinez", "title": "Aerospace Researcher at AeroInnovations", "race": "Hispanic"}
+        ],
+        "Biotechnology Researcher": [
+            {"name": "Dr. Laura Roberts", "title": "Senior Biotechnology Researcher at BioTechDiscoveries", "race": "White"},
+            {"name": "Sophia Johnson", "title": "Biotechnology Analyst at BioTechSolutions", "race": "Asian"},
+            {"name": "Robert Lee", "title": "Biomedical Engineering Specialist at BiomedTech Innovations", "race": "Black"},
+            {"name": "Jessica Adams", "title": "Research Scientist at BioInnovate Labs", "race": "White"},
+            {"name": "Maria Lopez", "title": "Biotechnology Consultant at BioTechExperts", "race": "Hispanic"}
+        ],
+        "Network Security Specialist": [
+            {"name": "Sarah Chen", "title": "Cybersecurity Analyst at SecureTech Solutions", "race": "Asian"},
+            {"name": "David Wilson", "title": "Network Security Engineer at CyberGuardians", "race": "White"},
+            {"name": "Emily Johnson", "title": "Information Security Specialist at InfoSec Group", "race": "Asian"},
+            {"name": "Michael Brown", "title": "Security Solutions Architect at SecureData Systems", "race": "Black"},
+            {"name": "Juan Martinez", "title": "Cybersecurity Consultant at CyberDefenders", "race": "Hispanic"}
+        ],
+        "Robotics Engineer": [
+            {"name": "Dr. Sophia Zhang", "title": "Robotics Research Scientist at RoboTech Labs", "race": "Asian"},
+            {"name": "John Lee", "title": "Robotics Systems Engineer at AI Robotics", "race": "White"},
+            {"name": "Oliver Smith", "title": "Autonomous Robotics Specialist at RoboInnovations", "race": "White"},
+            {"name": "Julia Roberts", "title": "AI and Robotics Developer at RoboGenius", "race": "Black"},
+            {"name": "Maria Lopez", "title": "Robotics Programmer at RoboTech Solutions", "race": "Hispanic"}
+        ]
+    }
+    
+    st.write(" ")
+    st.write("Select your preferred role to find mentors:")
+    selected_role = st.selectbox("Select a role:", list(mentors_by_role.keys()))
+    
+    if selected_role:
+        st.write(f"**Mentors for {selected_role}:**")
+        for mentor in mentors_by_role[selected_role]:
+            st.write(f"- {mentor['name']}, {mentor['title']} (Race: {mentor['race']})")
+
 
 # Function to display industry insights and news
 def display_industry_insights():
