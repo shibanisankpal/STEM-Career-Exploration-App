@@ -51,10 +51,13 @@ def display_virtual_job_shadowing():
     
     st.write("Experience a day in the life of a Software Engineer:")
     st.write("Watch video interviews and demos from Software Engineers as they work on real-world projects.")
-    # Embed YouTube video
+ 
+    # hyperlink to the video on YouTube
     video_url = "https://www.youtube.com/watch?v=1LSXEC0Clow&list=PL6qIzGkkiXFG-uelSxKpgSz4x3CYLc4DE&index=22"
-    st.write(f'<iframe width="560" height="315" src="{video_url}" frameborder="0" allowfullscreen></iframe>', unsafe_allow_html=True)
+    st.write(f"[Watch the video here]({video_url})")
+
     st.write("Video credit: [Indeed's YouTube Channel](https://www.youtube.com/user/IndeedJobs)")
+
 
 # Function to display educational pathways
 def display_educational_pathways():
