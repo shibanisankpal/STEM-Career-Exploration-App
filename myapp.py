@@ -50,7 +50,7 @@ def display_virtual_job_shadowing():
     st.subheader("Virtual Job Shadowing")
     
     st.write("Experience a day in the life of a Software Engineer:")
-    st.write("Watch video interviews and demos from Software Engineers as they work on real-world projects.")
+    st.write("Watch a day in the life of a Software Engineer as she works on real-world projects.")
  
     # hyperlink to the video on YouTube
     video_url = "https://www.youtube.com/watch?v=1LSXEC0Clow&list=PL6qIzGkkiXFG-uelSxKpgSz4x3CYLc4DE&index=22"
