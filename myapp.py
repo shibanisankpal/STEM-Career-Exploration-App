@@ -1,7 +1,5 @@
 import streamlit as st
 
-
-
 # Function to display career profiles
 def display_career_profile():
     st.subheader("Career Profiles")
