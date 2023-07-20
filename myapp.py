@@ -183,10 +183,14 @@ def display_networking_community():
     
     st.write(" ")
     st.write("**Meetup Groups for Various STEM Roles:**")
-    for role, meetups in meetup_groups.items():
-        st.write(f"**{role}:**")
-        for meetup in meetups:
+
+    selected_role = st.selectbox("Select a role:", list(meetup_groups.keys()))
+    
+    if selected_role:
+        st.write(f"**{selected_role}:**")
+        for meetup in meetup_groups[selected_role]:
             st.write(f"- {meetup}")
+
 
     # Formal and empowering mentors for Data Science
     data_science_mentors = [
