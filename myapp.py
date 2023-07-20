@@ -436,12 +436,11 @@ def display_mentorship_connections():
             st.write(f"- {mentor['name']}, {mentor['title']}")
 
 
-#
-# Function to display industry insights and news
+
 # Function to display industry insights and news
 def display_industry_insights():
     st.subheader("Industry Insights and News")
-    st.write("Stay up-to-date with the latest trends and advancements in Data Science:")
+    st.write("Stay up-to-date with the latest trends and advancements in STEM:")
     st.write("Read articles, news, and case studies to gain insights into the industry.")
     
     # Fake write-ups for trends and advancements in industries related to the roles
@@ -592,9 +591,69 @@ def display_networking_community():
 # Function to display scholarships and internship opportunities
 def display_scholarships_internships():
     st.subheader("Scholarships and Internships")
-    # Add your code here to showcase scholarships and internships
     st.write("Explore scholarships and internship opportunities in Data Science:")
     st.write("Access information on available programs and application processes.")
+
+    scholarships_internships = {
+        "Software Engineer": [
+            "Google Software Engineering Internship - Summer 2023",
+            "Microsoft Explore Internship Program for Software Engineers",
+            "Adobe Women in Tech Scholarship for Computer Science Students"
+        ],
+        "Data Scientist": [
+            "NASA Data Science Internship - Data Analytics for Earth Science",
+            "IBM Data Science Elite Internship - Advanced Machine Learning",
+            "Women Who Code Scholarship for Data Science and AI"
+        ],
+        "Biomedical Researcher": [
+            "NIH Biomedical Research Training Program - Summer Internship",
+            "Stanford Biotechnology Scholarships for Undergraduate Researchers",
+            "Johnson & Johnson Women in Science Scholarship"
+        ],
+        "Civil Engineer": [
+            "Bechtel Engineering Internship - Infrastructure and Construction",
+            "American Society of Civil Engineers (ASCE) Scholarship",
+            "Autodesk Student Internship - Sustainable Design and Planning"
+        ],
+        "UX/UI Designer": [
+            "Facebook Design Internship - User Experience and Interface Design",
+            "Google Interaction Design Scholarship for Aspiring UX/UI Designers",
+            "AIGA Worldstudio Scholarship for Creative Designers"
+        ],
+        "Environmental Scientist": [
+            "Environmental Defense Fund (EDF) Climate Research Internship",
+            "National Geographic Society Exploration Grant for Environmental Studies",
+            "United Nations Environment Programme (UNEP) Scholarship"
+        ],
+        "Aerospace Engineer": [
+            "Boeing Aerospace Engineering Internship - Space Systems",
+            "Lockheed Martin Engineering Scholars Program",
+            "American Institute of Aeronautics and Astronautics (AIAA) Scholarship"
+        ],
+        "Biotechnology Researcher": [
+            "Genentech Biotechnology Internship - Molecular Biology",
+            "Harvard Stem Cell Institute (HSCI) Internship Program",
+            "Novartis Biomedical Research Scholarship for Undergraduate Scientists"
+        ],
+        "Network Security Specialist": [
+            "Cisco Cybersecurity Scholarship for Networking Professionals",
+            "Palo Alto Networks Cybersecurity Internship - Threat Analysis",
+            "ISC2 Women in Cybersecurity Scholarship"
+        ],
+        "Robotics Engineer": [
+            "Amazon Robotics Internship - Robotic Systems Development",
+            "Toyota Robotics Research Fellowship - AI and Robotics",
+            "RoboNation Robotics Scholarship for Engineering Students"
+        ]
+    }
+
+    selected_role = st.selectbox("Select a role:", list(scholarships_internships.keys()))
+
+    if selected_role:
+        st.write(f"**{selected_role}:**")
+        for opportunity in scholarships_internships[selected_role]:
+            st.write(f"- {opportunity}")
+
 
 # Main function
 def main():
