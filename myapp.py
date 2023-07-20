@@ -63,11 +63,27 @@ def display_virtual_job_shadowing():
 def display_educational_pathways():
     st.subheader("Educational Pathways")
     
-    st.write("Explore various educational pathways to enter the field of Data Science:")
-    st.write("- Bachelor's degree in Computer Science")
-    st.write("- Master's degree in Data Science")
-    st.write("- Online certifications in Machine Learning")
+    # Educational pathways
+    careers_educational_pathways = {
+        "Software Engineer": "Bachelor's degree in Computer Science or Software Engineering",
+        "Data Scientist": "Bachelor's or Master's degree in Computer Science, Data Science, Statistics, or a related field",
+        "Biomedical Researcher": "Bachelor's degree in Biology, Biochemistry, Biotechnology, or a related field",
+        "Civil Engineer": "Bachelor's degree in Civil Engineering or a related field",
+        "UX/UI Designer": "Bachelor's degree in Design, Interaction Design, or a related field",
+        "Environmental Scientist": "Bachelor's degree in Environmental Science, Environmental Engineering, or a related field",
+        "Aerospace Engineer": "Bachelor's degree in Aerospace Engineering or a related field",
+        "Biotechnology Researcher": "Bachelor's or Master's degree in Biotechnology, Biochemistry, or a related field",
+        "Network Security Specialist": "Bachelor's degree in Computer Science, Information Security, or a related field with a focus on network security",
+        "Robotics Engineer": "Bachelor's or Master's degree in Robotics, Mechanical Engineering, or a related field with a focus on robotics and automation"
+    }
+    
+    selected_career = st.selectbox("Select a career:", list(careers_educational_pathways.keys()))
+    
+    if selected_career:
+        st.write(f"**{selected_career}**")
+        st.write(careers_educational_pathways[selected_career])
 
+        
 # Function to display mentorship connections
 def display_mentorship_connections():
     st.subheader("Mentorship Connections")
