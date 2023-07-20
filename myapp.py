@@ -1,5 +1,5 @@
 import streamlit as st
-from IPython.display import IFrame
+
 
 
 # Function to display career profiles
@@ -56,6 +56,7 @@ def display_virtual_job_shadowing():
     # Embed YouTube video
     video_url = "https://www.youtube.com/watch?v=1LSXEC0Clow&list=PL6qIzGkkiXFG-uelSxKpgSz4x3CYLc4DE&index=22"
     st.write(f'<iframe width="560" height="315" src="{video_url}" frameborder="0" allowfullscreen></iframe>', unsafe_allow_html=True)
+    st.write("Video credit: [Indeed's YouTube Channel](https://www.youtube.com/user/IndeedJobs)")
 
 # Function to display educational pathways
 def display_educational_pathways():
