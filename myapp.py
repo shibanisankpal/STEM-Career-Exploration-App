@@ -102,20 +102,8 @@ def display_industry_insights():
 def display_networking_community():
     st.subheader("Networking and Community")
     st.write("Connect with fellow enthusiasts:")
-    st.write("Join discussion forums, attend meetups, and collaborate on projects.")
+    st.write("Join groups, attend meetups, and collaborate on projects.")
     
-    # Formal and empowering discussion forum names for Data Science
-    data_science_forums = [
-        "WomenInData Professionals Forum",
-        "DataScience Empowerment Community",
-        "SheAnalytics Network",
-        "STEMQueens Forum",
-        "DataWizards Collective"
-    ]
-    
-    st.write("**Discussion Forums for Data Science:**")
-    for forum in data_science_forums:
-        st.write(f"- {forum}")
 
     # Formal and empowering meetup groups for various roles
     meetup_groups = {
@@ -182,7 +170,7 @@ def display_networking_community():
     }
     
     st.write(" ")
-    st.write("**Meetup Groups for Various STEM Roles:**")
+    st.write("**Discussion Groups for Various STEM Roles:**")
 
     selected_role = st.selectbox("Select a role:", list(meetup_groups.keys()))
     
@@ -192,19 +180,6 @@ def display_networking_community():
             st.write(f"- {meetup}")
 
 
-    # Formal and empowering mentors for Data Science
-    data_science_mentors = [
-        {"name": "Dr. Alicia Roberts", "title": "Senior Data Scientist at Analytico Inc."},
-        {"name": "Jenny Zhang", "title": "Machine Learning Engineer at AI Innovations"},
-        {"name": "Rachel Chen", "title": "Data Science Manager at DataTech Solutions"},
-        {"name": "Alex Turner", "title": "Data Analyst at DataMinds Co."},
-        {"name": "Dr. Emily Lee", "title": "Data Scientist at InsightsLab"}
-    ]
-    
-    st.write(" ")
-    st.write("**Mentors for Data Science:**")
-    for mentor in data_science_mentors:
-        st.write(f"- {mentor['name']}, {mentor['title']}")
 
 # Function to display scholarships and internship opportunities
 def display_scholarships_internships():
