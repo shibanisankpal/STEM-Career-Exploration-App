@@ -502,13 +502,13 @@ def display_industry_insights():
     }
 
     selected_role = st.selectbox("Select a role:", list(industry_insights.keys()))
+    st.write("These are fictitious article names.")
 
     if selected_role:
         st.write(f"**{selected_role}:**")
         for insight in industry_insights[selected_role]:
             st.write(f"- {insight}")
-            st.write("These are fictitious article names.")
-
+        
 
 # Function to display networking and community
 def display_networking_community():
@@ -584,14 +584,16 @@ def display_networking_community():
     
     st.write(" ")
     st.write("**Discussion Groups for Various STEM Roles:**")
+    
 
     selected_role = st.selectbox("Select a role:", list(meetup_groups.keys()))
+    st.write("These are fictitious groups.")
     
     if selected_role:
         st.write(f"**{selected_role}:**")
         for meetup in meetup_groups[selected_role]:
             st.write(f"- {meetup}")
-            st.write("Thes are fictitious groups")
+        
 
 
 
@@ -656,12 +658,13 @@ def display_scholarships_internships():
     }
 
     selected_role = st.selectbox("Select a role:", list(scholarships_internships.keys()))
+    st.write("These are fictitious programs.")
 
     if selected_role:
         st.write(f"**{selected_role}:**")
         for opportunity in scholarships_internships[selected_role]:
             st.write(f"- {opportunity}")
-            st.write("These are fictitious programs.")
+            
 
 
 # Main function
