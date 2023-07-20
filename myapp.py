@@ -39,469 +39,228 @@ def display_virtual_job_shadowing():
     st.write(f"[Watch the video here]({video_url})")
 
     st.write("Video credit: [Indeed's YouTube Channel](https://www.youtube.com/user/IndeedJobs)")
-import streamlit as st
 
 # Function to display skill assessment for Software Engineer role
 def skill_assessment_software_engineer():
     st.write("Skill Assessment for Software Engineer")
     st.write("1. Which programming language is commonly used for web development?")
-    st.write("   a) Python")
-    st.write("   b) JavaScript")
-    st.write("   c) Java")
-    st.write("   d) C++")
-    correct_answer_q1 = "b"
+    st.radio("Select an option:", ["Python", "JavaScript", "Java", "C++"], key="q1")
 
     st.write("2. What is version control used for in software development?")
-    st.write("   a) Managing project timelines")
-    st.write("   b) Tracking changes in code")
-    st.write("   c) Generating test cases")
-    st.write("   d) Designing user interfaces")
-    correct_answer_q2 = "b"
+    st.radio("Select an option:", ["Managing project timelines", "Tracking changes in code", "Generating test cases", "Designing user interfaces"], key="q2")
 
     st.write("3. Which database system is known for its scalability and high availability?")
-    st.write("   a) MySQL")
-    st.write("   b) SQLite")
-    st.write("   c) MongoDB")
-    st.write("   d) PostgreSQL")
-    correct_answer_q3 = "d"
-
-    total_questions = 3
-    user_answers = {
-        "1": st.session_state.get("q1", "").lower(),
-        "2": st.session_state.get("q2", "").lower(),
-        "3": st.session_state.get("q3", "").lower()
-    }
+    st.radio("Select an option:", ["MySQL", "SQLite", "MongoDB", "PostgreSQL"], key="q3")
 
     if st.button("Submit"):
         # Check the answers
-        score = 0
-
-        if user_answers["1"] == correct_answer_q1:
-            score += 1
-        if user_answers["2"] == correct_answer_q2:
-            score += 1
-        if user_answers["3"] == correct_answer_q3:
-            score += 1
+        correct_answers = ["JavaScript", "Tracking changes in code", "PostgreSQL"]
+        user_answers = [st.session_state.get("q1", ""), st.session_state.get("q2", ""), st.session_state.get("q3", "")]
+        score = sum([1 for user_ans, correct_ans in zip(user_answers, correct_answers) if user_ans == correct_ans])
 
         # Display the score
-        st.write(f"You scored {score} out of {total_questions}.")
+        st.write(f"You scored {score} out of 3.")
         st.session_state.score = score
 
 # Function to display skill assessment for Data Scientist role
 def skill_assessment_data_scientist():
     st.write("Skill Assessment for Data Scientist")
     st.write("1. What is the primary goal of data cleaning in the data science process?")
-    st.write("   a) Reduce the size of the dataset")
-    st.write("   b) Prepare data for visualization")
-    st.write("   c) Ensure data is accurate and consistent")
-    st.write("   d) Combine data from different sources")
-    correct_answer_q1 = "c"
+    st.radio("Select an option:", ["Reduce the size of the dataset", "Prepare data for visualization", "Ensure data is accurate and consistent", "Combine data from different sources"], key="q1")
 
     st.write("2. Which machine learning algorithm is used for classification problems?")
-    st.write("   a) K-Means")
-    st.write("   b) Decision Trees")
-    st.write("   c) Linear Regression")
-    st.write("   d) Principal Component Analysis (PCA)")
-    correct_answer_q2 = "b"
+    st.radio("Select an option:", ["K-Means", "Decision Trees", "Linear Regression", "Principal Component Analysis (PCA)"], key="q2")
 
     st.write("3. What is the process of feeding labeled data to a machine learning algorithm for training?")
-    st.write("   a) Feature engineering")
-    st.write("   b) Model validation")
-    st.write("   c) Model evaluation")
-    st.write("   d) Supervised learning")
-    correct_answer_q3 = "d"
-
-    total_questions = 3
-    user_answers = {
-        "1": st.session_state.get("q1", "").lower(),
-        "2": st.session_state.get("q2", "").lower(),
-        "3": st.session_state.get("q3", "").lower()
-    }
+    st.radio("Select an option:", ["Feature engineering", "Model validation", "Model evaluation", "Supervised learning"], key="q3")
 
     if st.button("Submit"):
         # Check the answers
-        score = 0
-
-        if user_answers["1"] == correct_answer_q1:
-            score += 1
-        if user_answers["2"] == correct_answer_q2:
-            score += 1
-        if user_answers["3"] == correct_answer_q3:
-            score += 1
+        correct_answers = ["Ensure data is accurate and consistent", "Decision Trees", "Supervised learning"]
+        user_answers = [st.session_state.get("q1", ""), st.session_state.get("q2", ""), st.session_state.get("q3", "")]
+        score = sum([1 for user_ans, correct_ans in zip(user_answers, correct_answers) if user_ans == correct_ans])
 
         # Display the score
-        st.write(f"You scored {score} out of {total_questions}.")
+        st.write(f"You scored {score} out of 3.")
         st.session_state.score = score
 
 # Function to display skill assessment for Biomedical Researcher role
 def skill_assessment_biomedical_researcher():
     st.write("Skill Assessment for Biomedical Researcher")
     st.write("1. What is a common technique used to study biological molecules?")
-    st.write("   a) Polymerase Chain Reaction (PCR)")
-    st.write("   b) Regression Analysis")
-    st.write("   c) Network Security")
-    st.write("   d) Data Visualization")
-    correct_answer_q1 = "a"
+    st.radio("Select an option:", ["Polymerase Chain Reaction (PCR)", "Regression Analysis", "Network Security", "Data Visualization"], key="q1")
 
     st.write("2. What is the primary goal of biomedical research?")
-    st.write("   a) Develop new software applications")
-    st.write("   b) Improve healthcare services")
-    st.write("   c) Design civil infrastructure")
-    st.write("   d) Analyze financial data")
-    correct_answer_q2 = "b"
+    st.radio("Select an option:", ["Develop new software applications", "Improve healthcare services", "Design civil infrastructure", "Analyze financial data"], key="q2")
 
     st.write("3. Which of the following is used to visualize biological structures?")
-    st.write("   a) Statistical Analysis")
-    st.write("   b) 3D Printing")
-    st.write("   c) Artificial Intelligence")
-    st.write("   d) Machine Learning")
-    correct_answer_q3 = "b"
-
-    total_questions = 3
-    user_answers = {
-        "1": st.session_state.get("q1", "").lower(),
-        "2": st.session_state.get("q2", "").lower(),
-        "3": st.session_state.get("q3", "").lower()
-    }
+    st.radio("Select an option:", ["Statistical Analysis", "3D Printing", "Artificial Intelligence", "Machine Learning"], key="q3")
 
     if st.button("Submit"):
         # Check the answers
-        score = 0
-
-        if user_answers["1"] == correct_answer_q1:
-            score += 1
-        if user_answers["2"] == correct_answer_q2:
-            score += 1
-        if user_answers["3"] == correct_answer_q3:
-            score += 1
+        correct_answers = ["Polymerase Chain Reaction (PCR)", "Improve healthcare services", "3D Printing"]
+        user_answers = [st.session_state.get("q1", ""), st.session_state.get("q2", ""), st.session_state.get("q3", "")]
+        score = sum([1 for user_ans, correct_ans in zip(user_answers, correct_answers) if user_ans == correct_ans])
 
         # Display the score
-        st.write(f"You scored {score} out of {total_questions}.")
+        st.write(f"You scored {score} out of 3.")
         st.session_state.score = score
-
-
 
 # Function to display skill assessment for Civil Engineer role
 def skill_assessment_civil_engineer():
     st.write("Skill Assessment for Civil Engineer")
     st.write("1. What is the primary goal of civil engineering?")
-    st.write("   a) Develop software applications")
-    st.write("   b) Build and maintain infrastructure")
-    st.write("   c) Analyze biological data")
-    st.write("   d) Design user interfaces")
-    correct_answer_q1 = "b"
+    st.radio("Select an option:", ["Develop software applications", "Build and maintain infrastructure", "Analyze biological data", "Design user interfaces"], key="q1")
 
     st.write("2. Which engineering principle is used to ensure the stability of structures?")
-    st.write("   a) Newton's Laws of Motion")
-    st.write("   b) Ohm's Law")
-    st.write("   c) Hooke's Law")
-    st.write("   d) Bernoulli's Principle")
-    correct_answer_q2 = "c"
+    st.radio("Select an option:", ["Newton's Laws of Motion", "Ohm's Law", "Hooke's Law", "Bernoulli's Principle"], key="q2")
 
     st.write("3. What type of civil engineering project involves designing transportation systems?")
-    st.write("   a) Structural Engineering")
-    st.write("   b) Environmental Engineering")
-    st.write("   c) Geotechnical Engineering")
-    st.write("   d) Transportation Engineering")
-    correct_answer_q3 = "d"
-
-    total_questions = 3
-    user_answers = {
-        "1": st.session_state.get("q1", "").lower(),
-        "2": st.session_state.get("q2", "").lower(),
-        "3": st.session_state.get("q3", "").lower()
-    }
+    st.radio("Select an option:", ["Structural Engineering", "Environmental Engineering", "Geotechnical Engineering", "Transportation Engineering"], key="q3")
 
     if st.button("Submit"):
         # Check the answers
-        score = 0
-
-        if user_answers["1"] == correct_answer_q1:
-            score += 1
-        if user_answers["2"] == correct_answer_q2:
-            score += 1
-        if user_answers["3"] == correct_answer_q3:
-            score += 1
+        correct_answers = ["Build and maintain infrastructure", "Hooke's Law", "Transportation Engineering"]
+        user_answers = [st.session_state.get("q1", ""), st.session_state.get("q2", ""), st.session_state.get("q3", "")]
+        score = sum([1 for user_ans, correct_ans in zip(user_answers, correct_answers) if user_ans == correct_ans])
 
         # Display the score
-        st.write(f"You scored {score} out of {total_questions}.")
+        st.write(f"You scored {score} out of 3.")
         st.session_state.score = score
 
 # Function to display skill assessment for UX/UI Designer role
 def skill_assessment_ux_ui_designer():
     st.write("Skill Assessment for UX/UI Designer")
     st.write("1. What is the main focus of UX/UI design?")
-    st.write("   a) Analyzing financial data")
-    st.write("   b) Developing web applications")
-    st.write("   c) Enhancing user experience")
-    st.write("   d) Designing civil infrastructure")
-    correct_answer_q1 = "c"
+    st.radio("Select an option:", ["Analyze financial data", "Develop web applications", "Enhance user experience", "Design civil infrastructure"], key="q1")
 
     st.write("2. What is the purpose of wireframing in the design process?")
-    st.write("   a) Create 3D models")
-    st.write("   b) Present design ideas")
-    st.write("   c) Generate financial reports")
-    st.write("   d) Test software applications")
-    correct_answer_q2 = "b"
+    st.radio("Select an option:", ["Create 3D models", "Present design ideas", "Generate financial reports", "Test software applications"], key="q2")
 
     st.write("3. Which design principle focuses on how elements are arranged on a page?")
-    st.write("   a) Contrast")
-    st.write("   b) Alignment")
-    st.write("   c) Proximity")
-    st.write("   d) Repetition")
-    correct_answer_q3 = "b"
-
-    total_questions = 3
-    user_answers = {
-        "1": st.session_state.get("q1", "").lower(),
-        "2": st.session_state.get("q2", "").lower(),
-        "3": st.session_state.get("q3", "").lower()
-    }
+    st.radio("Select an option:", ["Contrast", "Alignment", "Proximity", "Repetition"], key="q3")
 
     if st.button("Submit"):
         # Check the answers
-        score = 0
-
-        if user_answers["1"] == correct_answer_q1:
-            score += 1
-        if user_answers["2"] == correct_answer_q2:
-            score += 1
-        if user_answers["3"] == correct_answer_q3:
-            score += 1
+        correct_answers = ["Enhance user experience", "Present design ideas", "Alignment"]
+        user_answers = [st.session_state.get("q1", ""), st.session_state.get("q2", ""), st.session_state.get("q3", "")]
+        score = sum([1 for user_ans, correct_ans in zip(user_answers, correct_answers) if user_ans == correct_ans])
 
         # Display the score
-        st.write(f"You scored {score} out of {total_questions}.")
+        st.write(f"You scored {score} out of 3.")
         st.session_state.score = score
 
 # Function to display skill assessment for Environmental Scientist role
 def skill_assessment_environmental_scientist():
     st.write("Skill Assessment for Environmental Scientist")
     st.write("1. What is the primary goal of environmental science?")
-    st.write("   a) Design user interfaces")
-    st.write("   b) Analyze financial data")
-    st.write("   c) Develop new software applications")
-    st.write("   d) Study interactions between organisms and their environment")
-    correct_answer_q1 = "d"
+    st.radio("Select an option:", ["Design user interfaces", "Analyze financial data", "Develop new software applications", "Study interactions between organisms and their environment"], key="q1")
 
     st.write("2. What is the study of past climates based on tree ring analysis?")
-    st.write("   a) Paleontology")
-    st.write("   b) Geology")
-    st.write("   c) Dendrochronology")
-    st.write("   d) Ecology")
-    correct_answer_q2 = "c"
+    st.radio("Select an option:", ["Paleontology", "Geology", "Dendrochronology", "Ecology"], key="q2")
 
     st.write("3. Which environmental issue involves the excessive buildup of greenhouse gases?")
-    st.write("   a) Deforestation")
-    st.write("   b) Ozone depletion")
-    st.write("   c) Ocean acidification")
-    st.write("   d) Global warming")
-    correct_answer_q3 = "d"
-
-    total_questions = 3
-    user_answers = {
-        "1": st.session_state.get("q1", "").lower(),
-        "2": st.session_state.get("q2", "").lower(),
-        "3": st.session_state.get("q3", "").lower()
-    }
+    st.radio("Select an option:", ["Deforestation", "Ozone depletion", "Ocean acidification", "Global warming"], key="q3")
 
     if st.button("Submit"):
         # Check the answers
-        score = 0
-
-        if user_answers["1"] == correct_answer_q1:
-            score += 1
-        if user_answers["2"] == correct_answer_q2:
-            score += 1
-        if user_answers["3"] == correct_answer_q3:
-            score += 1
+        correct_answers = ["Study interactions between organisms and their environment", "Dendrochronology", "Global warming"]
+        user_answers = [st.session_state.get("q1", ""), st.session_state.get("q2", ""), st.session_state.get("q3", "")]
+        score = sum([1 for user_ans, correct_ans in zip(user_answers, correct_answers) if user_ans == correct_ans])
 
         # Display the score
-        st.write(f"You scored {score} out of {total_questions}.")
+        st.write(f"You scored {score} out of 3.")
         st.session_state.score = score
 
 # Function to display skill assessment for Aerospace Engineer role
 def skill_assessment_aerospace_engineer():
     st.write("Skill Assessment for Aerospace Engineer")
     st.write("1. What is the primary focus of aerospace engineering?")
-    st.write("   a) Study of living organisms")
-    st.write("   b) Design and development of aircraft and spacecraft")
-    st.write("   c) Analysis of financial markets")
-    st.write("   d) Construction of civil infrastructure")
-    correct_answer_q1 = "b"
+    st.radio("Select an option:", ["Study of living organisms", "Design and development of aircraft and spacecraft", "Analysis of financial markets", "Construction of civil infrastructure"], key="q1")
 
     st.write("2. Which aerospace engineering field involves the study of flight principles?")
-    st.write("   a) Aerodynamics")
-    st.write("   b) Geotechnical Engineering")
-    st.write("   c) Environmental Engineering")
-    st.write("   d) Structural Engineering")
-    correct_answer_q2 = "a"
+    st.radio("Select an option:", ["Aerodynamics", "Geotechnical Engineering", "Environmental Engineering", "Structural Engineering"], key="q2")
 
     st.write("3. What is the purpose of wind tunnel testing in aerospace engineering?")
-    st.write("   a) Generate financial reports")
-    st.write("   b) Test rockets in space")
-    st.write("   c) Analyze the aerodynamic performance of models")
-    st.write("   d) Create 3D models of aircraft")
-    correct_answer_q3 = "c"
-
-    total_questions = 3
-    user_answers = {
-        "1": st.session_state.get("q1", "").lower(),
-        "2": st.session_state.get("q2", "").lower(),
-        "3": st.session_state.get("q3", "").lower()
-    }
+    st.radio("Select an option:", ["Generate financial reports", "Test rockets in space", "Analyze the aerodynamic performance of models", "Create 3D models of aircraft"], key="q3")
 
     if st.button("Submit"):
         # Check the answers
-        score = 0
-
-        if user_answers["1"] == correct_answer_q1:
-            score += 1
-        if user_answers["2"] == correct_answer_q2:
-            score += 1
-        if user_answers["3"] == correct_answer_q3:
-            score += 1
+        correct_answers = ["Design and development of aircraft and spacecraft", "Aerodynamics", "Analyze the aerodynamic performance of models"]
+        user_answers = [st.session_state.get("q1", ""), st.session_state.get("q2", ""), st.session_state.get("q3", "")]
+        score = sum([1 for user_ans, correct_ans in zip(user_answers, correct_answers) if user_ans == correct_ans])
 
         # Display the score
-        st.write(f"You scored {score} out of {total_questions}.")
+        st.write(f"You scored {score} out of 3.")
         st.session_state.score = score
 
 # Function to display skill assessment for Biotechnology Researcher role
 def skill_assessment_biotechnology_researcher():
     st.write("Skill Assessment for Biotechnology Researcher")
     st.write("1. What is the primary goal of biotechnology research?")
-    st.write("   a) Study of civil infrastructure")
-    st.write("   b) Development of financial models")
-    st.write("   c) Improvement of medical treatments")
-    st.write("   d) Design of user interfaces")
-    correct_answer_q1 = "c"
+    st.radio("Select an option:", ["Study of civil infrastructure", "Development of financial models", "Improvement of medical treatments", "Design of user interfaces"], key="q1")
 
     st.write("2. Which technique is used to amplify DNA in biotechnology experiments?")
-    st.write("   a) Polymerase Chain Reaction (PCR)")
-    st.write("   b) Principal Component Analysis (PCA)")
-    st.write("   c) Newton's Laws of Motion")
-    st.write("   d) Regression Analysis")
-    correct_answer_q2 = "a"
+    st.radio("Select an option:", ["Polymerase Chain Reaction (PCR)", "Principal Component Analysis (PCA)", "Newton's Laws of Motion", "Regression Analysis"], key="q2")
 
     st.write("3. What is the purpose of gene editing in biotechnology?")
-    st.write("   a) Analyze financial data")
-    st.write("   b) Improve healthcare services")
-    st.write("   c) Design web applications")
-    st.write("   d) Modify the genetic code of organisms")
-    correct_answer_q3 = "d"
-
-    total_questions = 3
-    user_answers = {
-        "1": st.session_state.get("q1", "").lower(),
-        "2": st.session_state.get("q2", "").lower(),
-        "3": st.session_state.get("q3", "").lower()
-    }
+    st.radio("Select an option:", ["Analyze financial data", "Improve healthcare services", "Design web applications", "Modify the genetic code of organisms"], key="q3")
 
     if st.button("Submit"):
         # Check the answers
-        score = 0
-
-        if user_answers["1"] == correct_answer_q1:
-            score += 1
-        if user_answers["2"] == correct_answer_q2:
-            score += 1
-        if user_answers["3"] == correct_answer_q3:
-            score += 1
+        correct_answers = ["Improvement of medical treatments", "Polymerase Chain Reaction (PCR)", "Modify the genetic code of organisms"]
+        user_answers = [st.session_state.get("q1", ""), st.session_state.get("q2", ""), st.session_state.get("q3", "")]
+        score = sum([1 for user_ans, correct_ans in zip(user_answers, correct_answers) if user_ans == correct_ans])
 
         # Display the score
-        st.write(f"You scored {score} out of {total_questions}.")
+        st.write(f"You scored {score} out of 3.")
         st.session_state.score = score
 
 # Function to display skill assessment for Network Security Specialist role
 def skill_assessment_network_security_specialist():
     st.write("Skill Assessment for Network Security Specialist")
-    st.write("1. What is the primary focus of network security?")
-    st.write("   a) Design of civil infrastructure")
-    st.write("   b) Analysis of financial data")
-    st.write("   c) Protection of computer networks and systems")
-    st.write("   d) Development of web applications")
-    correct_answer_q1 = "c"
+    st.write("1. What is the primary goal of network security?")
+    st.radio("Select an option:", ["Development of civil infrastructure", "Protection of computer networks and systems from cyber threats", "Analysis of biological data", "Design of software applications"], key="q1")
 
-    st.write("2. Which type of attack involves capturing and analyzing network traffic?")
-    st.write("   a) Brute force attack")
-    st.write("   b) Phishing attack")
-    st.write("   c) Denial-of-Service (DoS) attack")
-    st.write("   d) Packet sniffing attack")
-    correct_answer_q2 = "d"
+    st.write("2. What is the purpose of a firewall in network security?")
+    st.radio("Select an option:", ["Monitor network traffic", "Encrypt data during transmission", "Prevent unauthorized access to a network", "Generate financial reports"], key="q2")
 
-    st.write("3. What security measure involves verifying the identity of a user?")
-    st.write("   a) Intrusion Detection System (IDS)")
-    st.write("   b) Encryption")
-    st.write("   c) Multi-factor authentication")
-    st.write("   d) Firewall")
-    correct_answer_q3 = "c"
-
-    total_questions = 3
-    user_answers = {
-        "1": st.session_state.get("q1", "").lower(),
-        "2": st.session_state.get("q2", "").lower(),
-        "3": st.session_state.get("q3", "").lower()
-    }
+    st.write("3. Which security measure involves converting readable data into an unreadable format?")
+    st.radio("Select an option:", ["Decryption", "Authentication", "Encryption", "Authorization"], key="q3")
 
     if st.button("Submit"):
         # Check the answers
-        score = 0
-
-        if user_answers["1"] == correct_answer_q1:
-            score += 1
-        if user_answers["2"] == correct_answer_q2:
-            score += 1
-        if user_answers["3"] == correct_answer_q3:
-            score += 1
+        correct_answers = ["Protection of computer networks and systems from cyber threats", "Prevent unauthorized access to a network", "Encryption"]
+        user_answers = [st.session_state.get("q1", ""), st.session_state.get("q2", ""), st.session_state.get("q3", "")]
+        score = sum([1 for user_ans, correct_ans in zip(user_answers, correct_answers) if user_ans == correct_ans])
 
         # Display the score
-        st.write(f"You scored {score} out of {total_questions}.")
+        st.write(f"You scored {score} out of 3.")
         st.session_state.score = score
 
 # Function to display skill assessment for Robotics Engineer role
 def skill_assessment_robotics_engineer():
     st.write("Skill Assessment for Robotics Engineer")
     st.write("1. What is the primary focus of robotics engineering?")
-    st.write("   a) Analyze financial data")
-    st.write("   b) Design and development of robots")
-    st.write("   c) Study of living organisms")
-    st.write("   d) Create 3D models")
-    correct_answer_q1 = "b"
+    st.radio("Select an option:", ["Design and development of robots", "Analysis of financial data", "Study of living organisms", "Construction of civil infrastructure"], key="q1")
 
-    st.write("2. Which field of robotics involves programming robots to perform tasks?")
-    st.write("   a) Mechatronics")
-    st.write("   b) Computer Vision")
-    st.write("   c) Artificial Intelligence")
-    st.write("   d) Controls and Kinematics")
-    correct_answer_q2 = "c"
+    st.write("2. What is the purpose of sensors in robotics?")
+    st.radio("Select an option:", ["Collect financial data", "Measure real-world parameters", "Create 3D models", "Test software applications"], key="q2")
 
-    st.write("3. What is the purpose of sensors in robotics?")
-    st.write("   a) Analyze the aerodynamic performance of models")
-    st.write("   b) Generate financial reports")
-    st.write("   c) Capture and process environmental data")
-    st.write("   d) Test rockets in space")
-    correct_answer_q3 = "c"
-
-    total_questions = 3
-    user_answers = {
-        "1": st.session_state.get("q1", "").lower(),
-        "2": st.session_state.get("q2", "").lower(),
-        "3": st.session_state.get("q3", "").lower()
-    }
+    st.write("3. Which programming language is commonly used in robotics engineering?")
+    st.radio("Select an option:", ["Python", "JavaScript", "Java", "C++"], key="q3")
 
     if st.button("Submit"):
         # Check the answers
-        score = 0
-
-        if user_answers["1"] == correct_answer_q1:
-            score += 1
-        if user_answers["2"] == correct_answer_q2:
-            score += 1
-        if user_answers["3"] == correct_answer_q3:
-            score += 1
+        correct_answers = ["Design and development of robots", "Measure real-world parameters", "Python"]
+        user_answers = [st.session_state.get("q1", ""), st.session_state.get("q2", ""), st.session_state.get("q3", "")]
+        score = sum([1 for user_ans, correct_ans in zip(user_answers, correct_answers) if user_ans == correct_ans])
 
         # Display the score
-        st.write(f"You scored {score} out of {total_questions}.")
+        st.write(f"You scored {score} out of 3.")
         st.session_state.score = score
+
+
 
 
 def display_skill_assessment():
@@ -520,7 +279,7 @@ def display_skill_assessment():
     ]
     
     # Create a dropdown to select the role
-    selected_role = st.sidebar.selectbox("Select a Role:", roles)
+    selected_role = st.selectbox("Select a Role:", roles)
     
     # Based on the selected role, call the corresponding skill assessment function
     if selected_role == "Software Engineer":
