@@ -504,34 +504,48 @@ def skill_assessment_robotics_engineer():
         st.session_state.score = score
 
 
-
-
 def display_skill_assessment():
-    # Set page title and layout
-    st.set_page_config(page_title="STEM Career Exploration App", layout="wide")
+    # Define the available roles for the dropdown
+    roles = [
+        "Software Engineer",
+        "Data Scientist",
+        "Biomedical Researcher",
+        "Civil Engineer",
+        "UX/UI Designer",
+        "Environmental Scientist",
+        "Aerospace Engineer",
+        "Biotechnology Researcher",
+        "Network Security Specialist",
+        "Robotics Engineer"
+    ]
     
-    # Display app title and description
-    st.title("STEM Career Exploration App")
-    st.write("Explore various STEM career options and resources.")
+    # Create a dropdown to select the role
+    selected_role = st.sidebar.selectbox("Select a Role:", roles)
     
-    # Create a sidebar menu for app navigation
-    menu_options = {
-        "Career Profiles": display_career_profile,
-        "Skill Assessment - Software Engineer": skill_assessment_software_engineer,
-        "Skill Assessment - Data Scientist": skill_assessment_data_scientist,
-        "Skill Assessment - Biomedical Researcher": skill_assessment_biomedical_researcher,
-        "Skill Assessment - Civil Engineer": skill_assessment_civil_engineer,
-        "Skill Assessment - UX/UI Designer": skill_assessment_ux_ui_designer,
-        "Skill Assessment - Environmental Scientist": skill_assessment_environmental_scientist,
-        "Skill Assessment - Aerospace Engineer": skill_assessment_aerospace_engineer,
-        "Skill Assessment - Biotechnology Researcher": skill_assessment_biotechnology_researcher,
-        "Skill Assessment - Network Security Specialist": skill_assessment_network_security_specialist,
-        "Skill Assessment - Robotics Engineer": skill_assessment_robotics_engineer
-    }
-    menu_selection = st.sidebar.radio("Menu", list(menu_options.keys()))
-    
-    # Based on the menu selection, call the corresponding function
-    menu_options[menu_selection]()
+    # Based on the selected role, call the corresponding skill assessment function
+    if selected_role == "Software Engineer":
+        skill_assessment_software_engineer()
+    elif selected_role == "Data Scientist":
+        skill_assessment_data_scientist()
+    elif selected_role == "Biomedical Researcher":
+        skill_assessment_biomedical_researcher()
+    elif selected_role == "Civil Engineer":
+        skill_assessment_civil_engineer()
+    elif selected_role == "UX/UI Designer":
+        skill_assessment_ux_ui_designer()
+    elif selected_role == "Environmental Scientist":
+        skill_assessment_environmental_scientist()
+    elif selected_role == "Aerospace Engineer":
+        skill_assessment_aerospace_engineer()
+    elif selected_role == "Biotechnology Researcher":
+        skill_assessment_biotechnology_researcher()
+    elif selected_role == "Network Security Specialist":
+        skill_assessment_network_security_specialist()
+    elif selected_role == "Robotics Engineer":
+        skill_assessment_robotics_engineer()
+
+
+
 
 
 
