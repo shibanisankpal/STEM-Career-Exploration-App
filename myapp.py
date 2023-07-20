@@ -442,6 +442,7 @@ def display_industry_insights():
     st.subheader("Industry Insights and News")
     st.write("Stay up-to-date with the latest trends and advancements in STEM:")
     st.write("Read articles, news, and case studies to gain insights into the industry.")
+    st.write("These are fictitious article names")
     
     # Fake write-ups for trends and advancements in industries related to the roles
     industry_insights = {
@@ -510,6 +511,7 @@ def display_networking_community():
     st.subheader("Networking and Community")
     st.write("Connect with fellow enthusiasts:")
     st.write("Join groups, attend meetups, and collaborate on projects.")
+    st.write("These are fictitious groups")
     
 
     # Formal and empowering meetup groups for various roles
@@ -593,6 +595,7 @@ def display_scholarships_internships():
     st.subheader("Scholarships and Internships")
     st.write("Explore scholarships and internship opportunities in Data Science:")
     st.write("Access information on available programs and application processes.")
+    st.write("These are fictitous programs")
 
     scholarships_internships = {
         "Software Engineer": [
@@ -602,12 +605,12 @@ def display_scholarships_internships():
         ],
         "Data Scientist": [
             "NASA Data Science Internship - Data Analytics for Earth Science",
-            "IBM Data Science Elite Internship - Advanced Machine Learning",
+            "IBM Data Science Internship - Advanced Machine Learning",
             "Women Who Code Scholarship for Data Science and AI"
         ],
         "Biomedical Researcher": [
             "NIH Biomedical Research Training Program - Summer Internship",
-            "Stanford Biotechnology Scholarships for Undergraduate Researchers",
+            "Biotechnology Scholarships for Undergraduate Researchers",
             "Johnson & Johnson Women in Science Scholarship"
         ],
         "Civil Engineer": [
@@ -632,7 +635,7 @@ def display_scholarships_internships():
         ],
         "Biotechnology Researcher": [
             "Genentech Biotechnology Internship - Molecular Biology",
-            "Harvard Stem Cell Institute (HSCI) Internship Program",
+            "NUS Stem Cell Institute Internship Program",
             "Novartis Biomedical Research Scholarship for Undergraduate Scientists"
         ],
         "Network Security Specialist": [
