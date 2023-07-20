@@ -5,14 +5,14 @@ This is my submission to TCS Sustainathon 2023. The STEM Career Exploration App 
 
 ## Features
 
-- **Career Profiles**: Explore detailed profiles of various STEM careers, including job responsibilities, required education, salary ranges, and growth opportunities.
+- **Career Profiles**: Explore job responsibilities of various STEM careers.
 - **Skill Assessment**: Take interactive quizzes to assess your skills and identify areas of strength in STEM disciplines.
-- **Virtual Job Shadowing**: Experience a day in the life of professionals working in different STEM careers through videos and interactive demos.
+- **Virtual Job Shadowing**: Experience a day in the life of professionals working in different STEM careers through videos.
 - **Educational Pathways**: Access information on different educational pathways and programs to enter and excel in STEM fields.
 - **Mentorship Connections**: Connect with experienced mentors who can provide guidance, career advice, and networking opportunities.
 - **Industry Insights and News**: Stay up-to-date with the latest trends, news, and advancements in STEM fields.
-- **Networking and Community**: Engage with a community of like-minded individuals, join discussion forums, and collaborate on projects.
-- **Scholarships and Internships**: Explore available scholarships, grants, and internship opportunities in STEM.
+- **Networking and Community**: Engage with a community of like-minded individuals, join discussion groups, and collaborate on projects.
+- **Scholarships and Internships**: Explore available scholarships and internship opportunities in STEM.
 
 ## Technologies Used
 
