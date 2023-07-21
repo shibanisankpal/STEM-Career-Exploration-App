@@ -29,6 +29,3 @@ This is my submission to TCS Sustainathon 2023. The STEM Career Exploration App 
 5. Access the app in your browser
 
 
-## Contact
-
-For any inquiries or questions, please contact me at [shibanisankpal@gmail.com](mailto:shibanisankpal@gmail.com).
